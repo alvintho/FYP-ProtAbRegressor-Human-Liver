@@ -2,7 +2,7 @@
 
 This project researched on various models and develop a predictive approach in predicting tissue-specific protein abundance in humans with the combination of mRNA and protein features. This project utilized integrated human liver tissue expression data and researched various models capabilities by comparing performance metrics to ultimately contributing to inherently more effective mRNA vaccine designs and tackling mRNA design bottlenecks. This project focused on incorporating mRNA and protein datasets, traditional machine learning methods for baseline, and deep-learning-based models for performance comparisons.
 
-![alt text](image-4.png)
+![alt text](images/multimodal-fusion-system-design.png)
 
 This project has successfully achieved prediction performance of R² score of 0.50 for protein abundances in human liver tissue with XGBoost and Multimodal LSTM based on sequence & expression features only, signifying the ability to capture relevant patterns in the underlying complex biological mechanisms.
 
@@ -11,7 +11,9 @@ This project has successfully achieved prediction performance of R² score of 0.
 
 1. Download Human Protein Abundance Dataset from [PaxDB database](https://pax-db.org/downloads/5.0/datasets/9606/9606-LIVER-integrated.txt) --> Place into PaxDB directory
 2. Download GTEx [Transcript TPMs](https://www.gtexportal.org/home/downloads/adult-gtex/bulk_tissue_expression) dataset and Sample Attributes DS [Metadata](https://www.gtexportal.org/home/downloads/adult-gtex/metadata) --> Place into GTEx directory
+3. Copy envrionment variables
 
+    `cp .env.development .env`
 
 # 3. Install packages
 ```

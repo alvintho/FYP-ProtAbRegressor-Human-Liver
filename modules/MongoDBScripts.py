@@ -1,11 +1,15 @@
 from pymongo import MongoClient
+from dotenv import load_dotenv
 import pandas as pd
+import os
 
-MONGO_CLIENT_ADMIN_URL = ""
-MONGO_CLIENT_URL_READONLY = "mongodb+srv://readonlyuser:readonlyuser@cluster0.nrfez.mongodb.net/"
+load_dotenv()
 
-client = MongoClient(MONGO_CLIENT_URL_READONLY)
-db = client["FYP"]
+MONGO_CLIENT_ADMIN_URL = os.getenv('MONGO_CLIENT_ADMIN_URL')
+MONGO_CLIENT_URL_READONLY = os.getenv('MONGO_CLIENT_URL_READONLY')
+
+read_only_client = MongoClient(MONGO_CLIENT_URL_READONLY)
+db = read_only_client["FYP"]
 fused_features_set_collection = db["fused_features_set"]
 cleaned_protein_transcript_liver_set_collection = db[
     "cleaned_protein_transcript_liver_set"
