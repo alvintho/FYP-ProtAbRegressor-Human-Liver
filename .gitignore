@@ -1,0 +1,29 @@
+#GTEx files
+GTEX/GTEx_Analysis_v10_Annotations_SampleAttributesDS.txt
+GTEx/GTEx_Analysis_v10_RSEMv1.3.3_transcripts_tpm.txt.gz
+
+# modules
+modules/__pycache__
+
+#PaxDb files
+PaxDB/PaxDB_liver_dataset.txt
+
+# CSV files
+biopython_features.csv
+cleaned_liver_data.csv
+concatenated_features.csv
+liver_paxdb_dataset.csv
+liver_transcript_tpm.csv
+preprocessed_features.csv
+
+# Embeddings files
+Protein Embeddings/prot_structure_embeddings.csv
+Sequence_Embeddings/mRNA_Sequence_Embeddings/GP-GCN/example_data
+Sequence_Embeddings/mRNA_Sequence_Embeddings/GP-GCN/GCNFrame
+Sequence_Embeddings/mRNA_Sequence_Embeddings/GP-GCN/gcn_embeddings.csv
+
+Sequence_Embeddings/mRNA_Sequence_Embeddings/Helix-mRNA/helix_mrna_5utr_embeddings.csv
+Sequence_Embeddings/mRNA_Sequence_Embeddings/Helix-mRNA/helix_mrna_cds_embeddings.csv
+
+Sequence_Embeddings/mRNA_Sequence_Embeddings/Linear_Fold/lf_features.csv
+Sequence_Embeddings/mRNA_Sequence_Embeddings/Linear_Fold/LinearFold
