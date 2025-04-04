@@ -27,3 +27,5 @@ Sequence_Embeddings/mRNA_Sequence_Embeddings/Helix-mRNA/helix_mrna_cds_embedding
 
 Sequence_Embeddings/mRNA_Sequence_Embeddings/Linear_Fold/lf_features.csv
 Sequence_Embeddings/mRNA_Sequence_Embeddings/Linear_Fold/LinearFold
+
+.env
