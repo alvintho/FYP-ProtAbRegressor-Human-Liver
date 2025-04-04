@@ -72,6 +72,7 @@ Demonstration results can be found [here](FYP/7_Demonstration.ipynb)
 2. Features Computation 
     
     [Biopython](FYP/2_biopython_features.ipynb)
+
     ![alt text](images/biopython-class.png)
 
     [LinearFold](FYP/Sequence_Embeddings/mRNA_Sequence_Embeddings/Linear_Fold/LinearFold_features.ipynb)
