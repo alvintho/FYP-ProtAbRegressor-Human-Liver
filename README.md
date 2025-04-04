@@ -11,7 +11,7 @@ This project has successfully achieved prediction performance of R² score of 0.
 
 1. Download Human Protein Abundance Dataset from [PaxDB database](https://pax-db.org/downloads/5.0/datasets/9606/9606-LIVER-integrated.txt) --> Place into PaxDB directory
 2. Download GTEx [Transcript TPMs](https://www.gtexportal.org/home/downloads/adult-gtex/bulk_tissue_expression) dataset and Sample Attributes DS [Metadata](https://www.gtexportal.org/home/downloads/adult-gtex/metadata) --> Place into GTEx directory
-3. Copy envrionment variables
+3. Copy environment variables & setup on request
 
     `cp .env.development .env`
 
@@ -55,12 +55,12 @@ pip install -r requirements.txt
 
 # 5. Results Demonstration
 
-Demonstration results can be found [here](FYP/7_Demonstration.ipynb)
+Demonstration results can be found [here](7_Demonstration.ipynb)
 
 
 # 6. Project Execution Steps (End-to-end)
 
-1. Data Extraction Parallel [File](FYP/0_data_extraction_parallel.py)
+1. Data Extraction Parallel [File](0_data_extraction_parallel.py)
 
     Design:
     ![alt text](images/data-collection-pipeline-design.png)
@@ -73,30 +73,30 @@ Demonstration results can be found [here](FYP/7_Demonstration.ipynb)
 
 2. Features Computation 
     
-    [Biopython](FYP/2_biopython_features.ipynb)
+    [Biopython](2_biopython_features.ipynb)
 
     ![alt text](images/biopython-class.png)
 
-    [LinearFold](FYP/Sequence_Embeddings/mRNA_Sequence_Embeddings/Linear_Fold/LinearFold_features.ipynb)
+    [LinearFold](Sequence_Embeddings/mRNA_Sequence_Embeddings/Linear_Fold/LinearFold_features.ipynb)
 
     ![alt text](images/linearfold-sequence-diagram.png)
 
 3. Embeddings Construction:
 
-    - [ESMFold notebook](FYP/Protein%20Embeddings/ESMFold_Structure_Embeddings_Extraction.ipynb)
-    - [Helix-mRNA notebook](FYP/Sequence_Embeddings/mRNA_Sequence_Embeddings/Helix-mRNA/Helix_MRNA.ipynb)
-    - [GCNFrame notebook](FYP/Sequence_Embeddings/mRNA_Sequence_Embeddings/GP-GCN/gcnframe.ipynb)
+    - [ESMFold notebook](Protein%20Embeddings/ESMFold_Structure_Embeddings_Extraction.ipynb)
+    - [Helix-mRNA notebook](Sequence_Embeddings/mRNA_Sequence_Embeddings/Helix-mRNA/Helix_MRNA.ipynb)
+    - [GCNFrame notebook](Sequence_Embeddings/mRNA_Sequence_Embeddings/GP-GCN/gcnframe.ipynb)
 
 4. Features Preprocessing:
 
-    [Exploratory Data Analysis & Features Selection](FYP/3_Features_Preprocessing.ipynb)
+    [Exploratory Data Analysis & Features Selection](3_Features_Preprocessing.ipynb)
 
     ![alt text](images/top-features-heatmap.png)
 
 5. Prediction Models:
 
-    - [Machine Learning Models](FYP/5_ML_Models.ipynb)
-    - [Multimodal Deep Learning Models](FYP/6_DL_Models.ipynb)
+    - [Machine Learning Models](5_ML_Models.ipynb)
+    - [Multimodal Deep Learning Models](6_DL_Models.ipynb)
 
     Neural Network Architecture:
 
@@ -107,3 +107,9 @@ Demonstration results can be found [here](FYP/7_Demonstration.ipynb)
     Embedding 3 2: ESMFold Trunk (384-dim)
 
     ![alt text](images/multimodal_lstm.png)
+
+6. Maintainer:
+
+    Name: Alvin Tho
+
+    Email: athosatri2-c@my.cityu.edu.hk
