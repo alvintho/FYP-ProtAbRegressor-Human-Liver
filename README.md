@@ -61,22 +61,23 @@ Demonstration results can be found [here](FYP/7_Demonstration.ipynb)
 1. Data Extraction Parallel [File](FYP/0_data_extraction_parallel.py)
 
     Design:
-    ![alt text](image-6.png)
+    ![alt text](images/data-collection-pipeline-design.png)
 
     Implementation: 
-    ![alt text](image-7.png)
+    ![alt text](images/data-collection-implementation.png)
 
     Result: 
-    ![alt text](image.png)
+    ![alt text](images/data-collection-processing.png)
 
 2. Features Computation 
     
     [Biopython](FYP/2_biopython_features.ipynb)
-    ![alt text](image-1.png)
+
+    ![alt text](images/biopython-class.png)
 
     [LinearFold](FYP/Sequence_Embeddings/mRNA_Sequence_Embeddings/Linear_Fold/LinearFold_features.ipynb)
 
-    ![alt text](image-2.png)
+    ![alt text](images/linearfold-sequence-diagram.png)
 
 3. Embeddings Construction:
 
@@ -88,7 +89,7 @@ Demonstration results can be found [here](FYP/7_Demonstration.ipynb)
 
     [Exploratory Data Analysis & Features Selection](FYP/3_Features_Preprocessing.ipynb)
 
-    ![alt text](image-3.png)
+    ![alt text](images/top-features-heatmap.png)
 
 5. Prediction Models:
 
@@ -103,4 +104,4 @@ Demonstration results can be found [here](FYP/7_Demonstration.ipynb)
 
     Embedding 3 2: ESMFold Trunk (384-dim)
 
-    ![alt text](image-5.png)
+    ![alt text](images/multimodal_lstm.png)
