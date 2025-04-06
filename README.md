@@ -4,7 +4,7 @@ This project researched on various models and develop a predictive approach in p
 
 ![alt text](images/multimodal-fusion-system-design.png)
 
-This project has successfully achieved prediction performance of R² score of 0.50 for protein abundances in human liver tissue with XGBoost and Multimodal LSTM based on sequence & expression features only, signifying the ability to capture relevant patterns in the underlying complex biological mechanisms.
+This project has successfully achieved zero-shot prediction performance of R² score of 0.50 for protein abundances in human liver tissue with Multimodal LSTM and XGBoost based on sequence & expression features only, signifying the ability to capture relevant patterns in the underlying complex biological mechanisms.
 
 
 # 2. Pre-requisites
@@ -71,7 +71,7 @@ Demonstration results can be found [here](7_Demonstration.ipynb)
     Result: 
     ![alt text](images/data-collection-processing.png)
 
-2. Features Computation 
+2. Features Computation
     
     [Biopython](2_biopython_features.ipynb)
 
@@ -108,7 +108,15 @@ Demonstration results can be found [here](7_Demonstration.ipynb)
 
     ![alt text](images/multimodal_lstm.png)
 
-6. Maintainer:
+6. MongoDB Database
+
+- Cleaned Pairwise Protein-Transcript Dataset Information
+![MongoDB Cleaned Protein-Transcript Liver Set](images/MongoDB-cleaned-liver-set.png)
+
+- Concatenated Features Set (LF+BP+GCNFrame+Helix-mRNA+ESMFold)
+![MongoDB Concatenated Features Set](images/MongoDB-concatenated-features-set)
+
+7. Maintainer:
 
     Name: Alvin Tho
 
