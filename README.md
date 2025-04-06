@@ -114,7 +114,7 @@ Demonstration results can be found [here](7_Demonstration.ipynb)
 ![MongoDB Cleaned Protein-Transcript Liver Set](images/MongoDB-cleaned-liver-set.png)
 
 - Concatenated Features Set (LF+BP+GCNFrame+Helix-mRNA+ESMFold)
-![MongoDB Concatenated Features Set](images/MongoDB-concatenated-features-set)
+![MongoDB Concatenated Features Set](images/MongoDB-concatenated-features-set.png)
 
 7. Maintainer:
 
