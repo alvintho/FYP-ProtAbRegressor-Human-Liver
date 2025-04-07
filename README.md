@@ -1,17 +1,24 @@
-# 1. Introduction
+# 1. A Multimodal framework for protein abundance prediction in humans
 
 This project researched on various models and develop a predictive approach in predicting tissue-specific protein abundance in humans with the combination of mRNA and protein features. This project utilized integrated human liver tissue expression data and researched various models capabilities by comparing performance metrics to ultimately contributing to inherently more effective mRNA vaccine designs and tackling mRNA design bottlenecks. This project focused on incorporating mRNA and protein datasets, traditional machine learning methods for baseline, and deep-learning-based models for performance comparisons.
 
 ![alt text](images/multimodal-fusion-system-design.png)
 
-This project has successfully achieved zero-shot prediction performance of R² score of 0.50 for protein abundances in human liver tissue with Multimodal LSTM and XGBoost based on sequence & expression features only, signifying the ability to capture relevant patterns in the underlying complex biological mechanisms.
+This project has successfully achieved zero-shot prediction performance of R² score of 0.50 in test set for protein abundances in human liver tissue with Multimodal LSTM based on sequence & expression features only, signifying the ability to capture relevant patterns in the underlying complex biological mechanisms.
+
+![alt text](images/multimodal-lstm-result.png)
 
 
 # 2. Pre-requisites
 
-1. Download Human Protein Abundance Dataset from [PaxDB database](https://pax-db.org/downloads/5.0/datasets/9606/9606-LIVER-integrated.txt) --> Place into PaxDB directory
-2. Download GTEx [Transcript TPMs](https://www.gtexportal.org/home/downloads/adult-gtex/bulk_tissue_expression) dataset and Sample Attributes DS [Metadata](https://www.gtexportal.org/home/downloads/adult-gtex/metadata) --> Place into GTEx directory
-3. Copy environment variables & setup on request
+1. Clone Repository
+```
+git clone https://github.com/alvintho/FYP-ProtAbRegressor-Human-Liver.git
+```
+
+2. Download Human Protein Abundance Dataset from [PaxDB database](https://pax-db.org/downloads/5.0/datasets/9606/9606-LIVER-integrated.txt) --> Place into PaxDB directory
+3. Download GTEx [Transcript TPMs](https://www.gtexportal.org/home/downloads/adult-gtex/bulk_tissue_expression) dataset and Sample Attributes DS [Metadata](https://www.gtexportal.org/home/downloads/adult-gtex/metadata) --> Place into GTEx directory
+4. Copy environment variables & setup on request
 
     `cp .env.development .env`
 
@@ -53,62 +60,89 @@ pip install -r requirements.txt
     └── MongoDBScripts.py
 ```
 
-# 5. Results Demonstration
+# 5. Results
 
-Demonstration results can be found [here](7_Demonstration.ipynb)
+Final report results reference [notebook.](Final_Report_Results_Reference.ipynb)
+
+Demonstration results can be found in this [notebook.](7_Demonstration.ipynb)
+
+Traning output is shown below (Multimodal LSTM):
+```
+Epoch 1/150
+[1m173/173[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m27s[0m 117ms/step - loss: 21.4414 - r2_score: -0.0593 - val_loss: 16.7198 - val_r2_score: 0.3765 - learning_rate: 0.0020
+Epoch 2/150
+[1m173/173[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m24s[0m 142ms/step - loss: 16.3023 - r2_score: 0.3312 - val_loss: 13.7580 - val_r2_score: 0.4589 - learning_rate: 0.0020
+    ..
+    ..
+    ..
+Epoch 76/150
+[1m173/173[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m25s[0m 144ms/step - loss: 4.6736 - r2_score: 0.5227 - val_loss: 5.1233 - val_r2_score: 0.5018 - learning_rate: 1.6000e-05
+Epoch 77/150
+[1m173/173[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m27s[0m 155ms/step - loss: 4.6118 - r2_score: 0.5291 - val_loss: 5.1237 - val_r2_score: 0.5017 - learning_rate: 1.6000e-05
+Epoch 77: early stopping
+Restoring model weights from the end of the best epoch: 69.
+[1m173/173[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m6s[0m 32ms/step
+[1m74/74[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 30ms/step
+```
+The model with best validation accuracy will be saved as `ProtAbRegressor_multimodal_lstm.keras`
+
+# 6. System Design & Methodologies
+
+### 1. [Parallel Data Extraction Pipeline](0_data_extraction_parallel.py)
+
+Data Collection Pipeline Design:
+![alt text](images/data-collection-pipeline-design.png)
+
+Implementation: 
+![alt text](images/data-collection-implementation.png)
+
+Result: 
+
+![alt text](images/data-collection-processing.png)
 
 
-# 6. Project Execution Steps (End-to-end)
+### 2. [Data Cleaning & Quality Control Pipeline](1_data_cleaning.ipynb)
 
-1. Data Extraction Parallel [File](0_data_extraction_parallel.py)
+![alt text](images/data-cleaning-pipeline.png)
 
-    Design:
-    ![alt text](images/data-collection-pipeline-design.png)
-
-    Implementation: 
-    ![alt text](images/data-collection-implementation.png)
-
-    Result: 
-    ![alt text](images/data-collection-processing.png)
-
-2. Features Computation
+### 3. Features Computation
     
-    [Biopython](2_biopython_features.ipynb)
+- [Biopython](2_biopython_features.ipynb)
 
-    ![alt text](images/biopython-class.png)
+![alt text](images/biopython-class.png)
 
-    [LinearFold](Sequence_Embeddings/mRNA_Sequence_Embeddings/Linear_Fold/LinearFold_features.ipynb)
+- [LinearFold](Sequence_Embeddings/mRNA_Sequence_Embeddings/Linear_Fold/LinearFold_features.ipynb)
 
-    ![alt text](images/linearfold-sequence-diagram.png)
+![alt text](images/linearfold-sequence-diagram.png)
 
-3. Embeddings Construction:
+### 4. Embeddings Construction:
 
-    - [ESMFold notebook](Protein%20Embeddings/ESMFold_Structure_Embeddings_Extraction.ipynb)
-    - [Helix-mRNA notebook](Sequence_Embeddings/mRNA_Sequence_Embeddings/Helix-mRNA/Helix_MRNA.ipynb)
-    - [GCNFrame notebook](Sequence_Embeddings/mRNA_Sequence_Embeddings/GP-GCN/gcnframe.ipynb)
+- [ESMFold notebook](Protein%20Embeddings/ESMFold_Structure_Embeddings_Extraction.ipynb)
+- [Helix-mRNA notebook](Sequence_Embeddings/mRNA_Sequence_Embeddings/Helix-mRNA/Helix_MRNA.ipynb)
+- [GCNFrame notebook](Sequence_Embeddings/mRNA_Sequence_Embeddings/GP-GCN/gcnframe.ipynb)
 
-4. Features Preprocessing:
+### 5. Features Preprocessing:
 
-    [Exploratory Data Analysis & Features Selection](3_Features_Preprocessing.ipynb)
+[Exploratory Data Analysis & Features Selection](3_Features_Preprocessing.ipynb)
 
-    ![alt text](images/top-features-heatmap.png)
+![alt text](images/top-features-heatmap.png)
 
-5. Prediction Models:
+### 6. Prediction Models:
 
-    - [Machine Learning Models](5_ML_Models.ipynb)
-    - [Multimodal Deep Learning Models](6_DL_Models.ipynb)
+- [Machine Learning Models](5_ML_Models.ipynb)
+- [Multimodal Deep Learning Models](6_DL_Models.ipynb)
 
-    Neural Network Architecture:
+Multimodal Neural Network Architecture:
 
-    Embedding 1: GCNFrame (100-dim)
+Embedding 1: GCNFrame (100-dim)
 
-    Embedding 2: Helix-mRNA (256-dim)
+Embedding 2: Helix-mRNA (256-dim)
 
-    Embedding 3 2: ESMFold Trunk (384-dim)
+Embedding 3 2: ESMFold Trunk (384-dim)
 
-    ![alt text](images/multimodal_lstm.png)
+![alt text](images/multimodal_lstm.png)
 
-6. MongoDB Database
+### 7. MongoDB Database
 
 - Cleaned Pairwise Protein-Transcript Dataset Information
 ![MongoDB Cleaned Protein-Transcript Liver Set](images/MongoDB-cleaned-liver-set.png)
