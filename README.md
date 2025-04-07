@@ -84,7 +84,7 @@ Restoring model weights from the end of the best epoch: 69.
 [1m173/173[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m6s[0m 32ms/step
 [1m74/74[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 30ms/step
 ```
-The model with best validation accuracy will be saved as `ProtAbRegressor_multimodal_lstm.keras`
+The model with best validation R² score will be saved as `ProtAbRegressor_multimodal_lstm.keras`
 
 # 6. System Design & Methodologies
 
