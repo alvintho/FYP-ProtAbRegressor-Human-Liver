@@ -1,12 +1,16 @@
 # 1. A Multimodal framework for protein abundance prediction in humans
 
-This project researched on various models and develop a predictive approach in predicting tissue-specific protein abundance in humans with the combination of mRNA and protein features. This project utilized integrated human liver tissue expression data and researched various models capabilities by comparing performance metrics to ultimately contributing to inherently more effective mRNA vaccine designs and tackling mRNA design bottlenecks. This project focused on incorporating mRNA and protein datasets, traditional machine learning methods for baseline, and deep-learning-based models for performance comparisons.
+This project researched on various models and develop a predictive approach in predicting tissue-specific protein abundance in humans with the combination of mRNA and protein features. This project utilized integrated human liver tissue expression data and researched various models capabilities by comparing performance metrics to ultimately contributing to inherently more effective mRNA vaccine designs. This project focused on incorporating mRNA and protein datasets, traditional machine learning methods for baseline, and deep-learning-based models for performance comparisons.
 
 ![alt text](images/multimodal-fusion-system-design.png)
 
-This project has successfully achieved zero-shot prediction performance of R² score of 0.50 in test set for protein abundances in human liver tissue with Multimodal LSTM based on sequence & expression features only, signifying the ability to capture relevant patterns in the underlying complex biological mechanisms.
+This project has successfully achieved transfer learning prediction performance of **R² score of 0.5026** in the test partition for protein abundances in human liver tissue with Multimodal LSTM based on sequence & expression features, signifying the ability to capture relevant patterns in the underlying complex biological mechanisms. The model development followed a systematic progression through multiple approaches:
 
-![alt text](images/multimodal-lstm-result.png)
+- Starting with a simple linear regression baseline (R² = 0.38)
+- Advancing to Random Forest which improved performance (R² = 0.47)
+- Further enhancement with XGBoost (R² = 0.5011)
+- Finally achieving the best performance with Multimodal LSTM (R² = 0.5026)
+- Each iteration demonstrated meaningful improvements in prediction accuracy, with the final Multimodal LSTM showing a 32.3% improvement over the baseline.
 
 
 # 2. Pre-requisites
@@ -61,6 +65,8 @@ pip install -r requirements.txt
 ```
 
 # 5. Results
+
+![alt text](images/multimodal-lstm-result.png)
 
 Final report results reference [notebook.](Final_Report_Results_Reference.ipynb)
 
