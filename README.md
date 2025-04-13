@@ -1,10 +1,10 @@
 # 1. A Multimodal framework for protein abundance prediction in humans
 
-This project researched on various models and develop a predictive approach in predicting tissue-specific protein abundance in humans with the combination of mRNA and protein features. This project utilized integrated human liver tissue expression data and researched various models capabilities by comparing performance metrics to ultimately contributing to inherently more effective mRNA vaccine designs. This project focused on incorporating mRNA and protein datasets, traditional machine learning methods for baseline, and deep-learning-based models for performance comparisons.
+This project researched on various models and developed a novel multimodal approach in human tissue protein abundance prediction by combining mRNA and protein features. This project utilized human liver tissue expression data (integrated) and evaluated performance metrics from baseline to advanced models to ultimately contributing to inherently more effective mRNA vaccine designs.
 
 ![alt text](images/multimodal-fusion-system-design.png)
 
-This project has successfully achieved transfer learning prediction performance of **R² score of 0.5026** in the test partition for protein abundances in human liver tissue with Multimodal LSTM based on sequence & expression features, signifying the ability to capture relevant patterns in the underlying complex biological mechanisms. The model development followed a systematic progression through multiple approaches:
+Through transfer learning approaches, the Multimodal LSTM has successfully achieved **R² score performance of 0.5026** on test partition in human liver tissue protein abundances based on sequence & expression features. Thus, signifying the ability to capture relevant patterns in the underlying complex biological mechanisms and competitiveness to modern researches. The model development followed a systematic progression through multiple approaches:
 
 - Starting with a simple linear regression baseline (R² = 0.38)
 - Advancing to Random Forest which improved performance (R² = 0.47)
