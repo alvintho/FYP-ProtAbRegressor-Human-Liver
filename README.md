@@ -1,6 +1,6 @@
 # 1. A Multimodal framework for protein abundance prediction in humans
 
-This project researched on various models and developed a novel multimodal approach in human tissue protein abundance prediction by combining mRNA and protein features. This project utilized human liver tissue expression data (integrated) and evaluated performance metrics from baseline to advanced models to ultimately contributing to inherently more effective mRNA vaccine designs.
+This project researched on various models and developed a novel multimodal approach in human tissue protein abundance prediction by combining mRNA and protein features. This project utilized human liver tissue expression data (integrated) and evaluated performance metrics from baseline to advanced models, ultimately contributing to inherently more effective mRNA vaccine designs.
 
 ![alt text](images/multimodal-fusion-system-design.png)
 
